@@ -20,8 +20,6 @@ public class ProductMB
         //return productCatalog.findProducts();
         return products;
     }
-    
-    
     public void loadProductsPreRender()
     {
         products = productCatalog.findProducts();
