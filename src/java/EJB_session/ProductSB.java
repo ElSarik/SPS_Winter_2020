@@ -18,6 +18,11 @@ public class ProductSB
     {        
         return em.createNamedQuery("Product.findAll").getResultList();
     }
+
+    public void persistProduct(Product product) 
+    {
+        em.persist(product);
+    }
     
     public void persist(Object object) 
     {

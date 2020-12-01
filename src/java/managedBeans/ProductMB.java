@@ -12,16 +12,38 @@ import javax.enterprise.context.RequestScoped;
 public class ProductMB 
 {
     @EJB
-    private ProductSB productCatalog;
+    private ProductSB productSB;
     List<Product> products;
+    private Product product = new Product() ;
+    
+    
+    
+    public ProductMB()
+    {
+        
+    }
     
     public List<Product> getProducts()
     {
         //return productCatalog.findProducts();
         return products;
     }
+    
     public void loadProductsPreRender()
     {
-        products = productCatalog.findProducts();
+        products = productSB.findProducts();
+    }
+    
+    public void createProduct()
+    {
+       productSB.persistProduct(getProduct()); //ISOS product ANTI GIA getProduct()
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }
