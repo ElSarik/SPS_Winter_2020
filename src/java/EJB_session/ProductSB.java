@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 //import javax.persistence.Query;
 
 @Stateless
-public class ProductCatalog 
+public class ProductSB 
 {
 
     @PersistenceContext(unitName = "ols1_manualPU")

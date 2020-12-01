@@ -1,6 +1,6 @@
 package managedBeans;
 
-import EJB_session.ProductCatalog;
+import EJB_session.ProductSB;
 import JPA_entities.Product;
 import java.util.List;
 import javax.ejb.EJB;
@@ -12,7 +12,7 @@ import javax.enterprise.context.RequestScoped;
 public class ProductMB 
 {
     @EJB
-    private ProductCatalog productCatalog;
+    private ProductSB productCatalog;
     List<Product> products;
     
     public List<Product> getProducts()
