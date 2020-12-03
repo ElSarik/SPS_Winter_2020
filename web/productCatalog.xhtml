@@ -57,6 +57,9 @@
                     <h:outputText value="#{item.category.name}"/>
                 </h:column>
             </h:dataTable>
+            <br/><br/>
+            <h:commandButton action="#{productMB.prepareCreateProduct()}"
+                             value="Create New Product"/>
         </h:form>
     </h:body>
 </html>
