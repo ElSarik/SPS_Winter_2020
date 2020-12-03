@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Create New Product</title>
+    </h:head>
+    <h:body>
+        
+        <h1>Create New Product:</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="ID"/>
+                <h:inputText value="#{productMB.product.id}"/>
+                
+                <h:outputLabel value="Name"/>
+                <h:inputText value="#{productMB.product.name}"/>
+                
+                <h:outputLabel value="Description"/>
+                <h:inputText value="#{productMB.product.description}"/>
+                
+                <h:outputLabel value="Price"/>
+                <h:inputText value="#{productMB.product.price}"/>
+                
+                <h:outputLabel value="Availability"/>
+                <h:selectOneMenu
+                    value="#{productMB.product.availability}">
+                    <f:selectItem itemLabel="--Select One--"
+                                  noSelectionOption="true"
+                                  itemDisabled="false"/>
+                    <f:selectItem itemValue="N" itemLabel="No"/>
+                    <f:selectItem itemValue="Y" itemLabel="Yes"/>
+                </h:selectOneMenu>
+        <ui:remove>
+                <h:outputLabel value="Category"/>
+                <h:selectOneMenu value="#{productMB.product.category}">
+                    <f:selectItem itemLabel="--Select One--"
+                                  noSelectionOption="true"
+                                  itemDisabled="false"/>
+                    <f:selectItem itemValue="1" itemLabel="Toys"/>
+                    <f:selectItem itemValue="2" itemLabel="Computers"/>
+                </h:selectOneMenu>
+        </ui:remove>
+            </h:panelGrid>
+            <br/>
+            <h:commandButton action="#{productMB.createProduct()}" value="Save"/>
+        </h:form>
+        <br/>
+        <h:button outcome="productCatalog"
+                  value="Cancel - Return to Product Catalog"/>
+    </h:body>
+</html>
+

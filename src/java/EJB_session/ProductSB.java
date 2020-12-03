@@ -8,7 +8,7 @@ import javax.persistence.PersistenceContext;
 //import javax.persistence.Query;
 
 @Stateless
-public class ProductCatalog 
+public class ProductSB 
 {
 
     @PersistenceContext(unitName = "ols1_manualPU")
@@ -17,6 +17,11 @@ public class ProductCatalog
     public List<Product> findProducts()
     {        
         return em.createNamedQuery("Product.findAll").getResultList();
+    }
+
+    public void persistProduct(Product product) 
+    {
+        em.persist(product);
     }
     
     public void persist(Object object) 
