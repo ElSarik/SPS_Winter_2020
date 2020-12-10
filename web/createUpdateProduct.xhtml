@@ -33,16 +33,18 @@
                     <f:selectItem itemValue="N" itemLabel="No"/>
                     <f:selectItem itemValue="Y" itemLabel="Yes"/>
                 </h:selectOneMenu>
-        <ui:remove>
+                
                 <h:outputLabel value="Category"/>
-                <h:selectOneMenu value="#{productMB.product.category}">
+                <h:selectOneMenu value="#{productMB.categoryID}"
+                                 hideNoSelectionOption="false">
                     <f:selectItem itemLabel="--Select One--"
                                   noSelectionOption="true"
                                   itemDisabled="false"/>
-                    <f:selectItem itemValue="1" itemLabel="Toys"/>
-                    <f:selectItem itemValue="2" itemLabel="Computers"/>
+                    <f:selectItems value="#{categoryMenu.categories}"
+                                   var="cat"
+                                   itemValue="#{cat.id}"
+                                   itemLabel="#{cat.name}"/>
                 </h:selectOneMenu>
-        </ui:remove>
             </h:panelGrid>
             <br/>
             <h:commandButton action="#{productMB.createProduct()}" value="Save"/>
