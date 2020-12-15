@@ -8,7 +8,9 @@
             <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/EJB_session/ProductSB.java</file>
             <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/web/createUpdateProduct.xhtml</file>
             <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/managedBeans/ProductMB.java</file>
-            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/JPA_entities/Product.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/JPA_entities/Category.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/EJB_session/CategorySB.java</file>
+            <file>file:/C:/Users/Elias/Documents/NetBeansProjects/ols1_manual/src/java/managedBeans/CategoryMenu.java</file>
         </group>
     </open-files>
 </project-private>

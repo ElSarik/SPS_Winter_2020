@@ -19,7 +19,24 @@
             <h:dataTable
             value="#{productMB.products}"
             var="item"
-            rendered="#{productMB.products.size() > 0}">            
+            rendered="#{productMB.products.size() > 0}">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Delete"/>
+                    </f:facet>
+                    <h:commandButton action="#{productMB.deleteProduct(item)}"
+                                     value="Delete">
+                    </h:commandButton>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Update"/>
+                    </f:facet>
+                    <h:commandButton action="#{productMB.prepareUpdateProduct(item)}"
+                                     value="Update">
+                    </h:commandButton>
+                </h:column>
+                
                 <h:column>
                     <f:facet name="header">
                         <h:outputText value="ID"/>

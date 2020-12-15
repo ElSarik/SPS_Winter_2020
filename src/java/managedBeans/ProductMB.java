@@ -18,6 +18,7 @@ public class ProductMB implements Serializable
     private ProductSB productSB;
     List<Product> products;
     private Product product; //= new Product() ;
+//    private Product currentProduct;
     private Short categoryID;
     
     public ProductMB()
@@ -34,6 +35,31 @@ public class ProductMB implements Serializable
     public void loadProductsPreRender()
     {
         products = productSB.findProducts();
+    }
+    
+    public String deleteProduct(Product p)
+    {
+//        currentProduct = p;
+        productSB.removeProduct(p);
+        return "productCatalog";
+    }
+    
+    public String updateProduct()
+    {
+        Category category = new Category();
+        category.setId(categoryID);
+        product.setCategory(category);
+        
+        productSB.updateProduct(product);
+        product = null;
+        return "productCatalog";
+    }
+    
+    public String prepareUpdateProduct(Product p)
+    {
+        this.product = p;
+        categoryID = product.getCategory().getId();
+        return "updateProduct";
     }
     
     public String prepareCreateProduct()

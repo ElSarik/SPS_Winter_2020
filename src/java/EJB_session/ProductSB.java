@@ -13,6 +13,16 @@ public class ProductSB
 
     @PersistenceContext(unitName = "ols1_manualPU")
     private EntityManager em;
+    
+    public void updateProduct(Product p)
+    {
+        em.merge(p);
+    }
+    
+    public void removeProduct(Product p)
+    {
+        em.remove(em.merge(p));
+    }
 
     public List<Product> findProducts()
     {        
